@@ -1,119 +1,314 @@
-local Players = game:GetService("Players")
-local Player = Players.LocalPlayer
-local Character = Player.Character or Player.CharacterAdded:Wait()
-local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
 
-local ScreenGui = Instance.new("ScreenGui")
-local ToggleButton = Instance.new("TextButton")
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
 
-ScreenGui.Parent = Player:WaitForChild("PlayerGui")
+]]--
 
-ToggleButton.Parent = ScreenGui
-ToggleButton.Size = UDim2.new(0, 200, 0, 50)
-ToggleButton.Position = UDim2.new(0.5, -100, 0.9, -25)
-ToggleButton.Text = "Start Farm"
-ToggleButton.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
-ToggleButton.TextScaled = true
-ToggleButton.Font = Enum.Font.SourceSansBold
-ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-local isFarming = false
-local farmProcess
-
-_G.ProximityPromptCountdown = 1
-_G.AutoProximityPrompt = false
-
-local function fireproximityprompt(Obj, Amount, Skip)
-    if Obj.ClassName == "ProximityPrompt" then 
-        Amount = Amount or 1
-        local PromptTime = Obj.HoldDuration
-        if Skip then 
-            Obj.HoldDuration = 0
-        end
-        for i = 1, Amount do 
-            Obj:InputHoldBegin()
-            if not Skip then 
-                wait(Obj.HoldDuration)
-            end
-            Obj:InputHoldEnd()
-        end
-        Obj.HoldDuration = PromptTime
-    else 
-        error("userdata<ProximityPrompt> expected")
-    end
+local v0 = game:GetService("Players");
+local v1 = v0.LocalPlayer;
+local v2 = v1.Character or v1.CharacterAdded:Wait();
+local v3 = v2:WaitForChild("HumanoidRootPart");
+local v4 = Instance.new("ScreenGui");
+local v5 = Instance.new("TextButton");
+v4.Parent = v1:WaitForChild("PlayerGui");
+v5.Parent = v4;
+v5.Size = UDim2.new((771 - 351) - ((731 - (87 + 263)) + (219 - (67 + 113))), 86 + 31 + (203 - 120), (0 + 0) - (0 - 0), (2189 - (802 + 150)) - (1069 + (317 - 199)));
+v5.Position = UDim2.new(0.5 - 0, -(441 - 341), (0.9 + 0) - (997 - (915 + 82)), -(54 - (82 - 53)));
+v5.Text = "Start Farm";
+v5.BackgroundColor3 = Color3.fromRGB((753 + 538) - ((915 - 219) + 510), 30 + (1327 - (1069 + 118)), 453 - 198);
+v5.TextScaled = true;
+v5.Font = Enum.Font.SourceSansBold;
+v5.TextColor3 = Color3.fromRGB((573 - 320) + (3 - 1), 1046 - (64 + 304 + (751 - 328)), (795 + 6) - (1337 - (368 + 423)));
+local v16 = false;
+local v17;
+_G.ProximityPromptCountdown = (59 - 40) - ((28 - (10 + 8)) + 8);
+_G.AutoProximityPrompt = false;
+local function v18(v22, v23, v24)
+	if (v22.ClassName == "ProximityPrompt") then
+		local v34 = (1438 - 1064) - ((565 - (416 + 26)) + 251);
+		local v35;
+		while true do
+			if (v34 == (0 - (0 - 0))) then
+				v23 = v23 or ((191 + 252) - (416 + 26));
+				v35 = v22.HoldDuration;
+				v34 = (4 - 1) - 2;
+			end
+			if (v34 == (1 + 0)) then
+				local v37 = 438 - (145 + 293);
+				while true do
+					if (v37 == 1) then
+						v34 = (432 - (44 + 386)) + (1486 - (998 + 488));
+						break;
+					end
+					if (v37 == (0 + 0)) then
+						if v24 then
+							v22.HoldDuration = (0 + 0) - 0;
+						end
+						for v49 = 773 - (201 + 571), v23 do
+							local v50 = 1138 - (116 + 1022);
+							local v51;
+							local v52;
+							while true do
+								if (v50 == (0 - 0)) then
+									v51 = 438 - (86 + 59 + (1069 - 776));
+									v52 = nil;
+									v50 = 3 - 2;
+								end
+								if (v50 == 1) then
+									while true do
+										if (v51 == ((1695 - (814 + 45)) - ((1626 - 966) + 176))) then
+											v52 = (24 + 406) - (16 + 28 + 386);
+											while true do
+												if (v52 == ((2371 - (261 + 624)) - ((1773 - 775) + 488))) then
+													v22:InputHoldBegin();
+													if not v24 then
+														wait(v22.HoldDuration);
+													end
+													v52 = 1 + (1080 - (1020 + 60));
+												end
+												if (v52 == (203 - (14 + 188))) then
+													v22:InputHoldEnd();
+													break;
+												end
+											end
+											break;
+										end
+									end
+									break;
+								end
+							end
+						end
+						v37 = 1;
+					end
+				end
+			end
+			if (v34 == ((2197 - (630 + 793)) - ((680 - 479) + (2703 - 2132)))) then
+				v22.HoldDuration = v35;
+				break;
+			end
+		end
+	else
+		error("userdata<ProximityPrompt> expected");
+	end
 end
-
-local function ProximityPromptCountdown()
-    while _G.AutoProximityPrompt do
-        wait(_G.ProximityPromptCountdown)
-        for _, v in pairs(game:GetService("Workspace"):GetDescendants()) do
-            if v:IsA("ProximityPrompt") then 
-                fireproximityprompt(v, 1, true)
-            end 
-        end
-    end
+local function v19()
+	while _G.AutoProximityPrompt do
+		local v32 = 0 + 0 + 0;
+		local v33;
+		while true do
+			if (v32 == ((0 - 0) + (1747 - (760 + 987)))) then
+				v33 = (3051 - (1789 + 124)) - ((882 - (745 + 21)) + 352 + 670);
+				while true do
+					if (v33 == ((0 - 0) - (0 - 0))) then
+						wait(_G.ProximityPromptCountdown);
+						for v45, v46 in pairs(game:GetService("Workspace"):GetDescendants()) do
+							if v46:IsA("ProximityPrompt") then
+								v18(v46, 1 + 0, true);
+							end
+						end
+						break;
+					end
+				end
+				break;
+			end
+		end
+	end
 end
-
-local function teleportTo(position)
-    HumanoidRootPart.CFrame = CFrame.new(position)
+local function v20(v25)
+	v3.CFrame = CFrame.new(v25);
 end
-
-local function executeFarmSequence()
-    local firstPositions = {
-        Vector3.new(918.5054931640625, 6.004361629486084, 2593.403076171875),
-        Vector3.new(906.214111328125, 5.937725067138672, 2598.89599609375),
-        Vector3.new(902.2783203125, 5.911746501922607, 2598.19482421875),
-        Vector3.new(893.4700927734375, 6.002333164215088, 2604.52685546875),
-        Vector3.new(894.46728515625, 6.192965030670166, 2609.843505859375),
-        Vector3.new(916.9315185546875, 5.948697090148926, 2617.240966796875),
-        Vector3.new(922.0988159179688, 5.937203884124756, 2617.114013671875),
-        Vector3.new(931.0291748046875, 5.925728797912598, 2616.84619140625),
-        Vector3.new(934.7196044921875, 5.966183185577393, 2616.73583984375),
-        Vector3.new(960.099853515625, 5.936804294586182, 2609.057373046875),
-        Vector3.new(960.1348266601562, 5.867787837982178, 2605.752197265625),
-        Vector3.new(951.9701538085938, 5.467665195465088, 2599.0078125),
-        Vector3.new(946.7758178710938, 5.467687606811523, 2599.128662109375),
-    }
-
-    for _, position in ipairs(firstPositions) do
-        teleportTo(position)
-        if position == Vector3.new(918.5054931640625, 6.004361629486084, 2593.403076171875) then
-            wait(15)
-        else
-            wait(1)
-        end
-    end
-
-    teleportTo(Vector3.new(849.0470581054688, 4.961475372314453, 51.236000061035156))
-    wait(380)
-
-    for _, position in ipairs(firstPositions) do
-        teleportTo(position)
-        if position == Vector3.new(918.5054931640625, 6.004361629486084, 2593.403076171875) then
-            wait(5)
-        else
-            wait(1)
-        end
-    end
-
-    teleportTo(Vector3.new(849.0470581054688, 4.961475372314453, 51.236000061035156))
-    wait(380)
+local function v21()
+	local v27 = 0 + 0;
+	local v28;
+	local v29;
+	while true do
+		if (v27 == (1056 - (87 + 968))) then
+			while true do
+				if (v28 == (2 + (0 - 0))) then
+					local v39 = 0 + 0;
+					while true do
+						if (v39 == (0 - 0)) then
+							for v54, v55 in ipairs(v29) do
+								local v56 = 1413 - (447 + 966);
+								local v57;
+								local v58;
+								while true do
+									if (v56 == (0 - 0)) then
+										v57 = 0;
+										v58 = nil;
+										v56 = 1818 - (1703 + 114);
+									end
+									if ((702 - (376 + 325)) == v56) then
+										while true do
+											if (v57 == ((0 - 0) - (0 - 0))) then
+												v58 = 0 + 0;
+												while true do
+													if (v58 == ((0 - 0) - 0)) then
+														v20(v55);
+														if (v55 == Vector3.new((599.5054931640625 - (9 + 5)) + 333, (1241.004361629486 - (85 + 291)) - ((2079 - (243 + 1022)) + (171 - 126)), (5270.403076171875 + 1118) - 3795)) then
+															wait(1 + 4);
+														else
+															wait((1182 - (1123 + 57)) - (1 + 0));
+														end
+														break;
+													end
+												end
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+							v20(Vector3.new((957.0470581054688 - (163 + 91)) + (2076 - (1869 + 61)), 2.961475372314453 + 1 + 1, (3296.236000061035 - 2360) - ((400 - 139) + 624)));
+							v39 = 1 + 0;
+						end
+						if (v39 == (1 - 0)) then
+							v28 = (818 + 52) - ((2024 - (1329 + 145)) + (1288 - (140 + 831)));
+							break;
+						end
+					end
+				end
+				if (v28 == ((1850 - (1409 + 441)) - (718 - (15 + 703)))) then
+					v29 = {Vector3.new((755.5054931640625 + 875) - (1150 - (262 + 176)), 291.0043616294861 - (134 + (1872 - (345 + 1376))), (4361.403076171875 - (198 + 490)) - ((4506 - 3486) + (143 - 83))),Vector3.new(2112.214111328125 - (696 + 510), (33.93772506713867 - 17) - (1273 - (1091 + 171)), 419.89599609375 + 2179),Vector3.new(356.2783203125 + 546, 17.911746501922607 - 12, (10837.19482421875 - 7569) - 670),Vector3.new(2717.4700927734375 - ((5937 - 4742) + 629), (2451.002333164215 - (208 + 490)) - (760 + 987), 4517.52685546875 - (151 + 1638 + 124)),Vector3.new(627.46728515625 + 267, (1608.1929650306702 - (660 + 176)) - (90 + 655 + (223 - (14 + 188))), (1573.843505859375 - (534 + 141)) + 688 + 1023),Vector3.new((3454.9315185546875 + 138) - (5623 - 2947), 8.948697090148926 - 3, (325.240966796875 - 120) + (6765 - 4353)),Vector3.new(8.09881591796875 + 914, 5.937203884124756, (2303.114013671875 + 1314) - ((847 - (115 + 281)) + (1276 - 727))),Vector3.new((4799.0291748046875 - 2813) - ((318 - 231) + (1835 - (550 + 317))), (11.925728797912598 - 3) - (3 - 0), 11515.84619140625 - (24867 - 15968)),Vector3.new(1219.7196044921875 - (134 + 151), 1670.9661831855774 - (970 + 695), (11283.73583984375 - 5370) - (5287 - (582 + 1408))),Vector3.new((2985.099853515625 - 612) - ((1684 - 1237) + (2790 - (1195 + 629))), (16.93680429458618 - 3) - (249 - (187 + 54)), (5206.057373046875 - (162 + 618)) - (1194 + 509 + 76 + 38)),Vector3.new((3542.1348266601562 - 1881) - ((631 - 255) + 26 + 299), (1644.8677878379822 - (1373 + 263)) - (1003 - (451 + 549)), 52.752197265625 + 110 + (3801 - 1358)),Vector3.new((4063.9701538085938 - 1645) - ((2283 - (746 + 638)) + 568), 1.467665195465088 + 1 + 3, (8688.0078125 - 2965) - 3124),Vector3.new((2541.7758178710938 - (1535 + 46)) - (9 + 0 + 5), (56.46768760681152 + 325) - ((645 - (306 + 254)) + 19 + 272), (7583.128662109375 - 3719) - (243 + 1022))};
+					for v41, v42 in ipairs(v29) do
+						local v43 = 1467 - (899 + 568);
+						local v44;
+						while true do
+							if (v43 == (0 + 0)) then
+								v44 = (701 - 411) - ((663 - (268 + 335)) + 230);
+								while true do
+									if (v44 == ((290 - (60 + 230)) - (572 - (426 + 146)))) then
+										v20(v42);
+										if (v42 == Vector3.new(14.5054931640625 + 96 + (2264 - (282 + 1174)), (816.0043616294861 - (569 + 242)) + 1, (11663.403076171875 - 7614) - (282 + 68 + 1106))) then
+											wait((1850 - (706 + 318)) - (569 + 242));
+										else
+											wait((1253 - (721 + 530)) - (1272 - (945 + 326)));
+										end
+										break;
+									end
+								end
+								break;
+							end
+						end
+					end
+					v28 = (2 - 1) + 0 + 0;
+				end
+				if (((1883 - (271 + 429)) - (1032 + 91 + 57)) == v28) then
+					wait((2904 - (1408 + 92)) - (706 + (1404 - (461 + 625))));
+					break;
+				end
+				if (v28 == ((1289 - (993 + 295)) + 0 + 0)) then
+					local v40 = 0;
+					while true do
+						if (v40 == (1172 - (418 + 753))) then
+							v28 = (3 + 3) - (1 + 3);
+							break;
+						end
+						if (0 == v40) then
+							v20(Vector3.new((621.0470581054688 + 1499) - (945 + 326), (66.96147537231445 + 192) - ((692 - (406 + 123)) + 91), (3750.236000061035 - (1749 + 20)) - (444 + 1425 + 61)));
+							wait((1429 - (1249 + 73)) + 98 + 175);
+							v40 = 1;
+						end
+					end
+				end
+			end
+			break;
+		end
+		if (v27 == (1145 - (466 + 679))) then
+			v28 = (0 - 0) - (0 - 0);
+			v29 = nil;
+			v27 = 1901 - (106 + 1794);
+		end
+	end
 end
-
-ToggleButton.MouseButton1Click:Connect(function()
-    isFarming = not isFarming
-    if isFarming then
-        ToggleButton.Text = "Stop Farm"
-        _G.AutoProximityPrompt = true
-        farmProcess = coroutine.wrap(function()
-            while isFarming do
-                executeFarmSequence()
-            end
-        end)
-        farmProcess()
-        ProximityPromptCountdown()
-    else
-        ToggleButton.Text = "Start Farm"
-        _G.AutoProximityPrompt = false
-    end
-end)
+v5.MouseButton1Click:Connect(function()
+	local v30 = 0 + 0;
+	local v31;
+	while true do
+		if (v30 == 0) then
+			v31 = 0 + 0 + 0;
+			while true do
+				if (v31 == ((4428 - 2928) - ((3812 - 2404) + (206 - (4 + 110))))) then
+					v16 = not v16;
+					if v16 then
+						local v47 = (1670 - (57 + 527)) - ((1888 - (41 + 1386)) + (728 - (17 + 86)));
+						while true do
+							if (v47 == ((1 + 0) - (0 - 0))) then
+								local v59 = 0 - 0;
+								local v60;
+								while true do
+									if (v59 == (166 - (122 + 44))) then
+										v60 = (0 - 0) + (0 - 0);
+										while true do
+											if (v60 == (0 + 0 + 0 + 0)) then
+												v17 = coroutine.wrap(function()
+													while v16 do
+														v21();
+													end
+												end);
+												v17();
+												v60 = 1 - (0 - 0);
+											end
+											if (v60 == ((66 - (30 + 35)) + 0 + 0)) then
+												v47 = 2 + (1257 - (1043 + 214));
+												break;
+											end
+										end
+										break;
+									end
+								end
+							end
+							if (((5579 - 4103) - (1329 + 145)) == v47) then
+								v19();
+								break;
+							end
+							if (v47 == 0) then
+								local v61 = (2183 - (323 + 889)) - ((376 - 236) + 831);
+								while true do
+									if (v61 == (0 + 0)) then
+										local v63 = 580 - (361 + 219);
+										while true do
+											if (v63 == (320 - (53 + 267))) then
+												v5.Text = "Stop Farm";
+												_G.AutoProximityPrompt = true;
+												v63 = 1;
+											end
+											if (v63 == (1 + 0)) then
+												v61 = (414 - (15 + 398)) + (982 - (18 + 964));
+												break;
+											end
+										end
+									end
+									if (v61 == ((6967 - 5116) - (816 + 593 + 278 + 163))) then
+										v47 = (1569 - (20 + 830)) - (12 + 3 + (829 - (116 + 10)));
+										break;
+									end
+								end
+							end
+						end
+					else
+						local v48 = 0 + 0 + 0;
+						while true do
+							if (v48 == ((1176 - (542 + 196)) - ((561 - 299) + 52 + 124))) then
+								v5.Text = "Start Farm";
+								_G.AutoProximityPrompt = false;
+								break;
+							end
+						end
+					end
+					break;
+				end
+			end
+			break;
+		end
+	end
+end);
+[14:21:59.452]: Obfuscation finished!
+[14:21:58.775]: Applying obfuscation 'beautify'
